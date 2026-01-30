@@ -12,22 +12,22 @@ class ReLU(Activation):
         return np.maximum(0, x)
 
     def backward(self, output_gradient):
-        # Đạo hàm ReLU: 1 nếu x > 0, ngược lại là 0
+        # Derivative of ReLU: 1 if x > 0, else 0
         return output_gradient * (self.input > 0)
 
 class Sigmoid(Activation):
     def forward(self, x):
         self.output = 1 / (1 + np.exp(-x))
         return self.output
-    
+
     def backward(self, output_gradient):
-        # Đạo hàm Sigmoid: s * (1 - s)
+        # Derivative of Sigmoid: s * (1 - s)
         return output_gradient * (self.output * (1 - self.output))
 
-# Hàm Linear dùng cho lớp Output của bài toán hồi quy
+# Linear function used for the output layer in regression problems
 class Linear(Activation):
     def forward(self, x):
-        return x # Giữ nguyên giá trị
-    
+        return x # Returns the input value unchanged
+
     def backward(self, output_gradient):
-        return output_gradient # Đạo hàm của x là 1
+        return output_gradient # Derivative of x is 1

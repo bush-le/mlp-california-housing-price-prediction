@@ -12,25 +12,25 @@ class MLP:
         self.optimizer = optimizer
 
     def predict(self, input_data):
-        # Lan truyền xuôi (Forward Propagation) qua từng lớp
+        # Forward Propagation through each layer
         output = input_data
         for layer in self.layers:
             output = layer.forward(output)
         return output
 
     def train_step(self, x_batch, y_batch):
-        # 1. Forward
+        # 1. Forward pass
         output = self.predict(x_batch)
         
-        # 2. Tính Loss (để in ra màn hình)
+        # 2. Calculate Loss (for display)
         loss = self.loss_function.forward(output, y_batch)
         
-        # 3. Backward (Lan truyền ngược)
+        # 3. Backward pass
         grad = self.loss_function.backward(output, y_batch)
         for layer in reversed(self.layers):
             grad = layer.backward(grad)
             
-        # 4. Update Weights (Tối ưu hóa)
+        # 4. Update Weights (Optimization)
         for layer in self.layers:
             self.optimizer.update(layer)
             
