@@ -1,0 +1,29 @@
+============================================================
+  STAGE 05 — OUTLIER DETECTION AND TREATMENT
+============================================================
+
+Samples: 20,640
+
+Feature                      Total       %  Decision
+-----------------------------------------------------------------
+  longitude                      0    0.00%  KEEP (genuine)
+  latitude                       0    0.00%  KEEP (genuine)
+  housing_median_age             0    0.00%  KEEP (genuine)
+  total_rooms                1,287    6.24%  KEEP (genuine)
+  total_bedrooms             1,306    6.33%  KEEP (genuine)
+  population                 1,196    5.79%  KEEP (genuine)
+  households                 1,220    5.91%  KEEP (genuine)
+  median_income                681    3.30%  KEEP (genuine)
+  median_house_value         1,071    5.19%  REMOVE (censored)
+
+  [✓] Before-treatment box plots → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/05_outliers_before.png
+
+  Treatment: Removed 965 censored houses (median_house_value >= $500,001)
+  Reason:    Dataset uses $500,001 as sentinel — true price unknown.
+  Shape after removal: (19675, 10)
+
+  Numerical feature outliers (total_rooms, population, etc.):
+    → Kept intact. These represent genuine large housing blocks.
+    → Will be controlled by StandardScaler + clip to [-5, 5].
+
+  [✓] After-treatment box plots → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/05_outliers_after.png

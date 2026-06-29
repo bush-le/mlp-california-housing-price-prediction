@@ -1,0 +1,23 @@
+============================================================
+  STAGE 10 — MLP TRAINING
+============================================================
+  Loading and preparing data...
+  Train shape: (15740, 16)
+  Architecture: 16 -> [64, 32, 16] -> 1
+  Optimizer: SGD (lr=0.001)
+  Epochs: 100, Batch Size: 16
+
+  Starting training...
+  Epoch 010/100 - Train Loss: 0.32041 - Val Loss: 0.33886
+  Epoch 020/100 - Train Loss: 0.29351 - Val Loss: 0.31740
+  Epoch 030/100 - Train Loss: 0.27791 - Val Loss: 0.30807
+  Epoch 040/100 - Train Loss: 0.26710 - Val Loss: 0.30062
+  Epoch 050/100 - Train Loss: 0.25849 - Val Loss: 0.29397
+  Epoch 060/100 - Train Loss: 0.25048 - Val Loss: 0.28993
+  Epoch 070/100 - Train Loss: 0.24462 - Val Loss: 0.28265
+  Epoch 080/100 - Train Loss: 0.23884 - Val Loss: 0.28045
+  Epoch 090/100 - Train Loss: 0.23395 - Val Loss: 0.27641
+  Epoch 100/100 - Train Loss: 0.22969 - Val Loss: 0.27408
+
+  [✓] Loss curve saved → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/10_mlp_loss_curve.png
+  [✓] Weights saved → /home/bush/Desktop/mlp-california-housing-price-prediction/results/models/mlp_weights.npy

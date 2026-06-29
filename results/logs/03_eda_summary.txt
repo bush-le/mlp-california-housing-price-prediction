@@ -1,0 +1,60 @@
+============================================================
+  STAGE 03 — EXPLORATORY DATA ANALYSIS
+============================================================
+
+--- Lens 1: Global Overview ---
+Samples : 20640
+Features: 10
+
+Column types:
+  longitude                  float64     missing=0
+  latitude                   float64     missing=0
+  housing_median_age         float64     missing=0
+  total_rooms                float64     missing=0
+  total_bedrooms             float64     missing=207
+  population                 float64     missing=0
+  households                 float64     missing=0
+  median_income              float64     missing=0
+  median_house_value         float64     missing=0
+  ocean_proximity            str         missing=0
+
+Value ranges (numerical):
+  longitude                  min=      -124.3  max=      -114.3  mean=      -119.6  std=         2.0
+  latitude                   min=        32.5  max=        42.0  mean=        35.6  std=         2.1
+  housing_median_age         min=         1.0  max=        52.0  mean=        28.6  std=        12.6
+  total_rooms                min=         2.0  max=     39320.0  mean=      2635.8  std=      2181.6
+  total_bedrooms             min=         1.0  max=      6445.0  mean=       537.9  std=       421.4
+  population                 min=         3.0  max=     35682.0  mean=      1425.5  std=      1132.5
+  households                 min=         1.0  max=      6082.0  mean=       499.5  std=       382.3
+  median_income              min=         0.5  max=        15.0  mean=         3.9  std=         1.9
+  median_house_value         min=     14999.0  max=    500001.0  mean=    206855.8  std=    115395.6
+
+--- Lens 2: Univariate Distributions ---
+  longitude                  skew=-0.30  median=-118.49  mean=-119.57
+  latitude                   skew=+0.47  median=34.26  mean=35.63
+  housing_median_age         skew=+0.06  median=29.00  mean=28.64
+  total_rooms                skew=+4.15  median=2127.00  mean=2635.76
+  total_bedrooms             skew=+3.46  median=435.00  mean=537.87
+  population                 skew=+4.94  median=1166.00  mean=1425.48
+  households                 skew=+3.41  median=409.00  mean=499.54
+  median_income              skew=+1.65  median=3.53  mean=3.87
+  median_house_value         skew=+0.98  median=179700.00  mean=206855.82
+
+  [✓] Histograms saved → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/03_eda_histograms.png
+  [✓] Categorical bar chart saved → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/03_eda_ocean_proximity.png
+
+--- Lens 3: Multivariate Relationships ---
+
+Correlation with median_house_value:
+  median_house_value         r = +1.0000
+  median_income              r = +0.6881
+  total_rooms                r = +0.1342
+  housing_median_age         r = +0.1056
+  households                 r = +0.0658
+  total_bedrooms             r = +0.0497
+  population                 r = -0.0246
+  longitude                  r = -0.0460
+  latitude                   r = -0.1442
+
+  [✓] Correlation heatmap saved → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/03_eda_correlation.png
+  [✓] Geographic map saved → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/03_eda_geo_map.png

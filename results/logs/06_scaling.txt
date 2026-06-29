@@ -1,0 +1,5 @@
+============================================================
+  STAGE 06 — FEATURE SCALING (standalone test)
+============================================================
+  This stage is integrated into main.py pipeline.
+  Run main.py for the full pipeline.

@@ -1,0 +1,16 @@
+============================================================
+  STAGE 12 — EVALUATION
+============================================================
+  MLP Regression Metrics:
+    RMSE: $52,352.36
+    MAE:  $36,959.85
+    R²:   0.7251
+
+  MLP Classification Metrics (Threshold > $250,000):
+    Accuracy:  0.8737
+    Precision: 0.7440
+    Recall:    0.7583
+    F1 Score:  0.7511
+
+  [✓] Confusion matrix plot saved → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/12_confusion_matrix.png
+  GMM model not provided. Skip.

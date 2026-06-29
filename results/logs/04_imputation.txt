@@ -1,0 +1,9 @@
+============================================================
+  STAGE 04 — MISSING VALUE HANDLING
+============================================================
+Shape before: (20640, 10)
+Columns with missing values:
+  total_bedrooms               207 missing (1.00%)  skew=+3.46 → median imputation (fill=435.00)
+
+Remaining missing values: 0
+Shape after: (20640, 10)

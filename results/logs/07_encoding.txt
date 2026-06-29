@@ -1,0 +1,7 @@
+============================================================
+  STAGE 07 — CATEGORICAL ENCODING
+============================================================
+  Categorical feature: ocean_proximity
+  Method: One-Hot Encoding (no natural order)
+  Reason: §7.4 — equidistant categories, no false ordering
+  This stage is integrated into main.py pipeline.

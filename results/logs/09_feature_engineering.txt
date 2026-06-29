@@ -1,0 +1,16 @@
+============================================================
+  STAGE 09 — FEATURE ENGINEERING
+============================================================
+
+  Shape before: (19675, 10)
+  Created: rooms_per_household = total_rooms / households
+  Created: bedrooms_per_room = total_bedrooms / total_rooms
+  Created: population_per_household = population / households
+  Shape after:  (19675, 13)
+
+  [✓] Engineered feature distributions → /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/09_engineered_distributions.png
+
+  Correlation with median_house_value:
+    rooms_per_household             r = +0.1097
+    bedrooms_per_room               r = -0.1962
+    population_per_household        r = -0.0215
