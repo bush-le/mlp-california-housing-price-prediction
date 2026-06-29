@@ -2,9 +2,12 @@
 Helper script to execute the preprocessing pipeline and return fully prepared data.
 Combines Stages 02-09.
 """
+import sys
 import os
 import numpy as np
 import pandas as pd
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import TARGET_COL, CATEGORICAL_COL, TEST_SIZE, TARGET_SCALE_FACTOR, FEATURE_CLIP_RANGE, RANDOM_SEED
 from stage_02_data_loading import load_raw_data
