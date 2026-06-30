@@ -1,8 +1,8 @@
 ============================================================
   STAGE 16 — K-FOLD CROSS VALIDATION
 ============================================================
-  Fold 1/3 Validation Loss: 0.36655
-  Fold 2/3 Validation Loss: 0.31989
-  Fold 3/3 Validation Loss: 0.33487
+  Fold 1/3 Validation Loss: 0.33666
+  Fold 2/3 Validation Loss: 0.34093
+  Fold 3/3 Validation Loss: 0.32779
 
-  CV Results (μ ± σ): 0.34044 ± 0.01945
+  CV Results (μ ± σ): 0.33513 ± 0.00547

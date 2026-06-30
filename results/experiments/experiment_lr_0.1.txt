@@ -1,2 +1,2 @@
 Learning Rate: 0.1
-Validation Loss: 0.2640887803948373
+Validation Loss: 0.2874301520424885

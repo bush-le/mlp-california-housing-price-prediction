@@ -46,7 +46,7 @@ def evaluate_mlp(model, X_test_scaled, y_test_scaled, log_fn):
     fig.savefig(cm_path)
     plt.close(fig)
 
-def main(mlp_model=None, gmm_model=None):
+def main(mlp_model=None):
     if mlp_model is None: return
     log_path = os.path.join(LOGS_DIR, '15_evaluation.txt')
     log = open(log_path, 'w')

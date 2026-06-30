@@ -2,12 +2,12 @@
   STAGE 14 — HYPERPARAMETER TUNING
 ============================================================
   Testing LR: 0.0001
-    Val Loss: 0.50997
+    Val Loss: 0.46651
   Testing LR: 0.001
-    Val Loss: 0.33236
+    Val Loss: 0.33586
   Testing LR: 0.01
-    Val Loss: 0.27982
+    Val Loss: 0.29212
   Testing LR: 0.1
-    Val Loss: 0.26409
+    Val Loss: 0.28743
 
   [✓] Tuning curve -> /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/14_tuning_lr.png

@@ -8,7 +8,6 @@ from pipeline.stage_08_encoding import main as run_08
 from pipeline.stage_10_feature_engineering import main as run_10
 from pipeline.stage_11_baseline import main as run_11
 from pipeline.stage_12_mlp_training import main as run_12
-from pipeline.stage_13_gmm_training import main as run_13
 from pipeline.stage_14_tuning import main as run_14
 from pipeline.stage_15_evaluation import main as run_15
 from pipeline.stage_16_cv import main as run_16
@@ -31,10 +30,9 @@ def run_pipeline():
     
     run_11()
     mlp_model = run_12()
-    gmm_model = run_13()
     
     run_14()
-    run_15(mlp_model, gmm_model)
+    run_15(mlp_model)
     run_16()
     run_17()
     run_18()
