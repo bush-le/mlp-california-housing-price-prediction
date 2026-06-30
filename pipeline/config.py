@@ -28,6 +28,7 @@ LOGS_DIR     = os.path.join(RESULTS_DIR, 'logs')
 PLOTS_DIR    = os.path.join(RESULTS_DIR, 'plots')
 METRICS_DIR  = os.path.join(RESULTS_DIR, 'metrics')
 MODELS_DIR   = os.path.join(RESULTS_DIR, 'models')
+EXPERIMENTS_DIR = os.path.join(RESULTS_DIR, 'experiments')
 
 # ============================================================
 # DATASET
@@ -75,5 +76,5 @@ NUM_FEATURES = [
 # ============================================================
 # HELPER — create all output directories at import time
 # ============================================================
-for _d in [PROCESSED_DIR, LOGS_DIR, PLOTS_DIR, METRICS_DIR, MODELS_DIR]:
+for _d in [PROCESSED_DIR, LOGS_DIR, PLOTS_DIR, METRICS_DIR, MODELS_DIR, EXPERIMENTS_DIR]:
     os.makedirs(_d, exist_ok=True)

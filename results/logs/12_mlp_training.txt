@@ -1,0 +1,15 @@
+============================================================
+  STAGE 12 — MLP TRAINING
+============================================================
+  Epoch 010/100 - Train: 0.30012 - Val: 0.32553
+  Epoch 020/100 - Train: 0.27967 - Val: 0.30765
+  Epoch 030/100 - Train: 0.26913 - Val: 0.30266
+  Epoch 040/100 - Train: 0.26092 - Val: 0.29257
+  Epoch 050/100 - Train: 0.25436 - Val: 0.29038
+  Epoch 060/100 - Train: 0.25008 - Val: 0.28365
+  Epoch 070/100 - Train: 0.24566 - Val: 0.28315
+  Epoch 080/100 - Train: 0.24169 - Val: 0.27834
+  Epoch 090/100 - Train: 0.23823 - Val: 0.27597
+  Epoch 100/100 - Train: 0.23494 - Val: 0.27625
+
+  [✓] Loss curve -> /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/12_mlp_loss_curve.png

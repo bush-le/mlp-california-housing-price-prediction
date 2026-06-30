@@ -1,0 +1,3 @@
+Interpretability:
+Global: Median income dominates the MLP's predictions.
+Local: Certain geographical features skew local predictions.

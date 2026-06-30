@@ -1,0 +1,1 @@
+Error Analysis: The highest errors typically occur on coastal properties where coordinates strongly influence value but aren't strictly linear.

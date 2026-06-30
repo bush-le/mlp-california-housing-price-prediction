@@ -1,0 +1,5 @@
+============================================================
+  STAGE 05 — MISSING VALUE HANDLING
+============================================================
+Columns with missing values (based on train set):
+  total_bedrooms               159 missing (0.96%)  skew=+3.44 → median (fill=435.00)

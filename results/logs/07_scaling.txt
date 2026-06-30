@@ -1,0 +1,4 @@
+============================================================
+  STAGE 07 — FEATURE SCALING
+============================================================
+  This stage is integrated into prepare_data.py pipeline.

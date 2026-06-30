@@ -1,0 +1,7 @@
+============================================================
+  STAGE 04 — TRAIN/TEST SPLIT (LEAKAGE BOUNDARY)
+============================================================
+  Train shape: (16512, 10)
+  Test shape:  (4128, 10)
+
+  [✓] Split distribution plot saved -> /home/bush/Desktop/mlp-california-housing-price-prediction/results/plots/04_split_balance.png

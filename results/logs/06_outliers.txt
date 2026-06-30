@@ -1,0 +1,4 @@
+============================================================
+  STAGE 06 — OUTLIER DETECTION AND TREATMENT
+============================================================
+  Removed 793 censored from train, 172 from test (target >= 500001.0)

@@ -1,47 +1,45 @@
-"""
-Execute the entire modular ML Pipeline sequentially.
-"""
-import os
-import sys
-
-from pipeline.stage_02_data_loading import main as run_stage_02
-from pipeline.stage_03_eda import main as run_stage_03
-from pipeline.stage_04_missing_values import main as run_stage_04
-from pipeline.stage_05_outliers import main as run_stage_05
-from pipeline.stage_06_scaling import main as run_stage_06
-from pipeline.stage_07_encoding import main as run_stage_07
-from pipeline.stage_08_imbalance import main as run_stage_08
-from pipeline.stage_09_feature_engineering import main as run_stage_09
-from pipeline.stage_10_mlp_training import main as run_stage_10
-from pipeline.stage_12_evaluation import main as run_stage_12
-from pipeline.stage_13_visualization import main as run_stage_13
+from pipeline.stage_02_data_loading import main as run_02
+from pipeline.stage_03_eda import main as run_03
+from pipeline.stage_04_split import main as run_04
+from pipeline.stage_05_missing_values import main as run_05
+from pipeline.stage_06_outliers import main as run_06
+from pipeline.stage_07_scaling import main as run_07
+from pipeline.stage_08_encoding import main as run_08
+from pipeline.stage_10_feature_engineering import main as run_10
+from pipeline.stage_11_baseline import main as run_11
+from pipeline.stage_12_mlp_training import main as run_12
+from pipeline.stage_13_gmm_training import main as run_13
+from pipeline.stage_14_tuning import main as run_14
+from pipeline.stage_15_evaluation import main as run_15
+from pipeline.stage_16_cv import main as run_16
+from pipeline.stage_17_test_eval import main as run_17
+from pipeline.stage_18_error_analysis import main as run_18
+from pipeline.stage_19_visualization import main as run_19
+from pipeline.stage_20_interpretability import main as run_20
 
 def run_pipeline():
-    print("\n" + "="*80)
-    print("  CALIFORNIA HOUSING PRICE PREDICTION PIPELINE (NUMPY SCRATCH)")
-    print("="*80)
+    print("Running Pipeline...")
+    run_02()
+    run_03()
+    # 04-10 are handled inside prepare_data sequentially but can be called to log
+    run_04()
+    run_05()
+    run_06()
+    run_10()
+    run_08()
+    run_07()
     
-    # Preprocessing (run independently to generate logs and plots)
-    run_stage_02()
-    run_stage_03()
-    run_stage_04()
-    run_stage_05()
-    run_stage_06()
-    run_stage_07()
-    run_stage_08()
-    run_stage_09()
+    run_11()
+    mlp_model = run_12()
+    gmm_model = run_13()
     
-    # Models
-    mlp_model = run_stage_10()
+    run_14()
+    run_15(mlp_model, gmm_model)
+    run_16()
+    run_17()
+    run_18()
+    run_19()
+    run_20()
     
-    # Evaluation & Viz
-    run_stage_12(mlp_model=mlp_model, gmm_model=None)
-    run_stage_13()
-    
-    print("\n" + "="*80)
-    print("  PIPELINE COMPLETED SUCCESSFULLY!")
-    print("  Check the results/ directory for logs, plots, metrics, and models.")
-    print("="*80)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     run_pipeline()
