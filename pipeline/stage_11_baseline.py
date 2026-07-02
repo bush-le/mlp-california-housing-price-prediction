@@ -1,8 +1,7 @@
-import sys, os
-import numpy as np
+import sys, os, numpy as np, matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import LOGS_DIR, TARGET_SCALE_FACTOR, METRICS_DIR
+from config import LOGS_DIR, METRICS_DIR, PLOTS_DIR, TARGET_SCALE_FACTOR
 from prepare_data import get_prepared_data
 
 def main():
@@ -27,6 +26,18 @@ def main():
     
     with open(os.path.join(METRICS_DIR, 'baseline_metrics.txt'), 'w') as f:
         f.write(f"RMSE: {rmse}\n")
+        
+    # Plot Baseline Predictions
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.scatter(y_test_unscaled, y_pred_unscaled, alpha=0.5, color='orange', edgecolors='k')
+    ax.plot([y_test_unscaled.min(), y_test_unscaled.max()], [y_test_unscaled.min(), y_test_unscaled.max()], 'r--', lw=2, label='Perfect Prediction')
+    ax.set_xlabel('Actual Prices')
+    ax.set_ylabel('Baseline Predicted Prices (Mean)')
+    ax.set_title('Baseline Model: Actual vs Predicted')
+    ax.legend()
+    fig.savefig(os.path.join(PLOTS_DIR, '11_baseline_pred.png'), bbox_inches='tight')
+    plt.close(fig)
+
     log.close()
 
 if __name__ == '__main__':

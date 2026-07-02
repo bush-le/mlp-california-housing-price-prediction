@@ -35,9 +35,9 @@ def run_pipeline():
     run_15(mlp_model)
     run_16()
     run_17()
-    run_18()
+    run_18(mlp_model)
     run_19()
-    run_20()
+    run_20(mlp_model)
     
 if __name__ == '__main__':
     run_pipeline()

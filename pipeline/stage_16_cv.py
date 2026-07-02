@@ -1,7 +1,7 @@
-import os, sys, numpy as np
+import os, sys, numpy as np, matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import LOGS_DIR, METRICS_DIR, RANDOM_SEED, EPOCHS, BATCH_SIZE
+from config import LOGS_DIR, METRICS_DIR, PLOTS_DIR, RANDOM_SEED, EPOCHS, BATCH_SIZE
 from prepare_data import get_prepared_data
 from stage_12_mlp_training import build_mlp
 np.random.seed(RANDOM_SEED)
@@ -40,6 +40,25 @@ def main():
     
     with open(os.path.join(METRICS_DIR, 'cv_results_mu_sigma.txt'), 'w') as f:
         f.write(f"CV Loss: {mu} +- {sigma}\n")
+        
+    # Plot CV losses Boxplot
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.boxplot(losses, patch_artist=True, boxprops=dict(facecolor='lightblue'))
+    ax.set_title('K-Fold Cross Validation Losses (K=3) - Boxplot')
+    ax.set_ylabel('Validation Loss (MSE scaled)')
+    ax.set_xticks([1])
+    ax.set_xticklabels(['Models'])
+    fig.savefig(os.path.join(PLOTS_DIR, '16_cv_losses_boxplot.png'), bbox_inches='tight')
+    plt.close(fig)
+    
+    # Plot CV losses Bar chart with error bar
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.bar(['CV Models'], [mu], yerr=[sigma], capsize=10, color='lightgreen', edgecolor='black', alpha=0.7)
+    ax.set_title('K-Fold Cross Validation Mean Loss (K=3) - Bar Chart')
+    ax.set_ylabel('Mean Validation Loss (MSE scaled)')
+    fig.savefig(os.path.join(PLOTS_DIR, '16_cv_losses_barchart.png'), bbox_inches='tight')
+    plt.close(fig)
+    
     log.close()
 
 if __name__ == '__main__':

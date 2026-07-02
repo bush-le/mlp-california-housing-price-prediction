@@ -35,6 +35,7 @@ def evaluate_mlp(model, X_test_scaled, y_test_scaled, log_fn):
     with open(os.path.join(METRICS_DIR, 'mlp_final_metrics.txt'), 'w') as f:
         f.write(f"RMSE:{rmse}\nMAE:{mae}\nR2:{r2}\nAcc:{acc}\nF1:{f1}\n")
         
+    # Confusion Matrix Plot
     fig, ax = plt.subplots(figsize=(6, 5))
     cax = ax.matshow([[tn, fp], [fn, tp]], cmap='Blues')
     for (i, j), z in np.ndenumerate([[tn, fp], [fn, tp]]):
@@ -42,8 +43,30 @@ def evaluate_mlp(model, X_test_scaled, y_test_scaled, log_fn):
     ax.set_xticks([0, 1]); ax.set_yticks([0, 1])
     ax.set_xticklabels(['Pred <= 250k', 'Pred > 250k'])
     ax.set_yticklabels(['True <= 250k', 'True > 250k'])
+    plt.title('Classification Confusion Matrix', pad=20)
     cm_path = os.path.join(PLOTS_DIR, '15_confusion_matrix.png')
-    fig.savefig(cm_path)
+    fig.savefig(cm_path, bbox_inches='tight')
+    plt.close(fig)
+
+    # Actual vs Predicted Plot
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.scatter(y_test, y_pred, alpha=0.5, color='blue', edgecolors='k')
+    ax.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
+    ax.set_xlabel('Actual Prices')
+    ax.set_ylabel('Predicted Prices')
+    ax.set_title('Actual vs Predicted House Prices')
+    fig.savefig(os.path.join(PLOTS_DIR, '15_actual_vs_predicted.png'), bbox_inches='tight')
+    plt.close(fig)
+
+    # Residuals Plot
+    residuals = y_test - y_pred
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.scatter(y_pred, residuals, alpha=0.5, color='purple', edgecolors='k')
+    ax.axhline(0, color='r', linestyle='--', lw=2)
+    ax.set_xlabel('Predicted Prices')
+    ax.set_ylabel('Residuals (Actual - Predicted)')
+    ax.set_title('Residuals Plot')
+    fig.savefig(os.path.join(PLOTS_DIR, '15_residuals.png'), bbox_inches='tight')
     plt.close(fig)
 
 def main(mlp_model=None):
